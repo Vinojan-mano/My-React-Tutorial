@@ -8,8 +8,11 @@ class Login extends React.Component {
   };
 
   login = () => {
+   
     fakeAuth.authenticate(() => {
+     
       this.setState({redirectToReferrer: true})
+      debugger;
     })
   };
 
@@ -34,10 +37,14 @@ class Login extends React.Component {
 
 /* A fake authentication function */
 export const fakeAuth = {
+  
   isAuthenticated: false,
   authenticate(cb) {
+    
     this.isAuthenticated = true;
+   
     setTimeout(cb,100)
+    debugger;
   },
 };
 
